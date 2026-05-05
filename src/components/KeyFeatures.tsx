@@ -1,32 +1,41 @@
 import {
-  Trees,
-  Award,
-  Building,
-  Dock,
   ShieldCheck,
-  Car,
-  Trophy,
-  Users,
+  Building,
   Store,
-  Video,
-  Leaf,
-  Baby,
+  Car,
+  BatteryCharging,
+  Trees,
+  BadgeCheck,
+  IndianRupee,
+  Hammer,
 } from "lucide-react";
 import "./KeyFeatures.css";
 
 const features = [
-  { icon: <Trees size={22} />, text: "75% Open Area in the Project" },
-  { icon: <Award size={22} />, text: "IGBC Certified Green Building" },
-  { icon: <Building size={22} />, text: "Only 5 Towers in Sector 81" },
-  { icon: <Dock size={22} />, text: "3 Lifts per Tower — First in Affordable" },
-  { icon: <ShieldCheck size={22} />, text: "Gated Entry with Security Checkpost" },
-  { icon: <Car size={22} />, text: "Ample Covered Car Parking" },
-  { icon: <Trophy size={22} />, text: "Cricket Pitch, Badminton & Basketball" },
-  { icon: <Users size={22} />, text: "Community Hall & Crèche Area" },
-  { icon: <Store size={22} />, text: "Retail Society Shops inside Campus" },
-  { icon: <Video size={22} />, text: "CCTV Surveillance 24×7" },
-  { icon: <Leaf size={22} />, text: "Landscaped Lawns & Green Areas" },
-  { icon: <Baby size={22} />, text: "Dedicated Children's Play Area" },
+  { icon: <Car size={22} />, text: "Dedicated car parking in affordable category." },
+  { icon: <Trees size={22} />, text: "Balanced planning with 50% open and 30% green area." },
+  { icon: <Building size={22} />, text: "Functional clubhouse with community-focused spaces." },
+  { icon: <ShieldCheck size={22} />, text: "Gated setup with CCTV network and 24/7 security." },
+  { icon: <BatteryCharging size={22} />, text: "100% power backup, high-speed lifts and utility comfort." },
+  { icon: <Store size={22} />, text: "In-campus retail convenience for daily needs." },
+];
+
+const usps = [
+  {
+    icon: <BadgeCheck size={24} />,
+    title: "Zero Maintenance",
+    text: "No maintenance charges for the first 5 years after possession (as per the shared government policy context).",
+  },
+  {
+    icon: <IndianRupee size={24} />,
+    title: "Affordable with PMAY",
+    text: "Value-driven pricing with PMAY-linked affordability benefits for end-users.",
+  },
+  {
+    icon: <Hammer size={24} />,
+    title: "Quality & Safety Focus",
+    text: "Planned build quality with an earthquake-resistant structure and modern fire-fighting systems.",
+  },
 ];
 
 export default function KeyFeatures() {
@@ -35,11 +44,10 @@ export default function KeyFeatures() {
       <div className="features-bg-decor" />
 
       <div className="container relative">
-        {/* Section Header */}
         <div className="features-header">
-          <span className="features-subtitle">Why choose us</span>
+          <span className="features-subtitle">Why choose this project</span>
           <h2 className="section-heading features-title">
-            Key Features
+            USPs and Project Strengths
           </h2>
         </div>
 
@@ -50,6 +58,16 @@ export default function KeyFeatures() {
                 {f.icon}
               </div>
               <p className="feature-text">{f.text}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="usp-grid">
+          {usps.map((usp) => (
+            <div key={usp.title} className="usp-card">
+              <div className="usp-icon">{usp.icon}</div>
+              <h3 className="usp-title">{usp.title}</h3>
+              <p className="usp-text">{usp.text}</p>
             </div>
           ))}
         </div>

@@ -8,6 +8,8 @@ import About from "@/components/About";
 import KeyFeatures from "@/components/KeyFeatures";
 import Amenities from "@/components/Amenities";
 import Gallery from "@/components/Gallery";
+import SiteMapSection from "@/components/SiteMapSection";
+import MasterPlanSection from "@/components/MasterPlanSection";
 import PriceList from "@/components/PriceList";
 import PaymentPlan from "@/components/PaymentPlan";
 import LocationBenefits from "@/components/LocationBenefits";
@@ -42,6 +44,8 @@ export default function App() {
         <KeyFeatures />
         <Amenities />
         <Gallery />
+        <SiteMapSection />
+        <MasterPlanSection />
         <PriceList />
         <PaymentPlan />
         <LocationBenefits />

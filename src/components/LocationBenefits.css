@@ -85,6 +85,13 @@
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
 }
 
+.location-hero-button {
+  display: block;
+  width: 100%;
+  position: relative;
+  padding: 0;
+}
+
 .location-hero-img {
   width: 100%;
   height: 16rem;
@@ -164,6 +171,21 @@
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
+.location-zoom-icon {
+  position: absolute;
+  top: 0.9rem;
+  right: 0.9rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.18);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+}
+
 /* Category Labels */
 .location-category-label {
   color: var(--color-orange-400);
@@ -224,13 +246,18 @@
 
 .location-benefit-icon {
   flex-shrink: 0;
-  width: 2.5rem;
+  min-width: 5.2rem;
+  width: fit-content;
   height: 2.5rem;
   border-radius: 0.625rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 0.65rem;
   transition: all 0.3s ease;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 .location-benefit-icon.transport {
@@ -279,6 +306,13 @@
   letter-spacing: 0.05em;
 }
 
+.location-benefit-note {
+  font-size: 0.76rem;
+  color: rgba(255, 255, 255, 0.58);
+  margin-top: 0.22rem;
+  line-height: 1.35;
+}
+
 /* Categories spacing */
 .location-category-group {
   margin-bottom: 1.75rem;
@@ -286,4 +320,47 @@
 
 .location-category-group:last-child {
   margin-bottom: 0;
+}
+
+.location-category-icon {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.location-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.location-lightbox-img {
+  max-width: min(1100px, 100%);
+  max-height: 88vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0.75rem;
+}
+
+.location-lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.14);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

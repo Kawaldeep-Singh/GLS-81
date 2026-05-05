@@ -8,9 +8,11 @@ const navLinks = [
   { label: "Features", href: "#features" },
   { label: "Amenities", href: "#amenities" },
   { label: "Gallery", href: "#gallery" },
+  { label: "Site Map", href: "#sitemap" },
+  { label: "Master", href: "#master" },
   { label: "Price", href: "#price" },
   { label: "Location", href: "#location" },
-  { label: "Contact", href: "#contact" },
+
 ];
 
 export default function Navbar() {
