@@ -12,6 +12,7 @@ import {
   ShieldCheck,
   BatteryCharging,
 } from "lucide-react";
+import { useEnquiryModal } from "./EnquiryModalContext";
 import "./Amenities.css";
 
 const amenities = [
@@ -90,6 +91,8 @@ const amenities = [
 ];
 
 export default function Amenities() {
+  const { openModal } = useEnquiryModal();
+
   return (
     <section id="amenities" className="amenities-section">
       <div className="container">
@@ -102,6 +105,15 @@ export default function Amenities() {
             GLS Avenue 81 is designed for modern family living, bringing daily
             comfort, security, greenery, and convenience into one integrated campus.
           </p>
+          <div style={{ marginTop: "1rem" }}>
+            <button
+              type="button"
+              className="enquiry-trigger-btn"
+              onClick={() => openModal("Amenities Section CTA")}
+            >
+              Enquire for Amenities
+            </button>
+          </div>
         </div>
 
         <div className="amenities-grid">

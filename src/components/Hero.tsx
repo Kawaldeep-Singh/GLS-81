@@ -1,7 +1,10 @@
 import { ArrowRight, MapPin, Building2, Shield, Home } from "lucide-react";
+import { useEnquiryModal } from "./EnquiryModalContext";
 import "./Hero.css";
 
 export default function Hero() {
+  const { openModal } = useEnquiryModal();
+
   return (
     <section id="home" className="hero-section">
       {/* Background Image */}
@@ -47,10 +50,10 @@ export default function Hero() {
 
         {/* CTA Buttons */}
         <div className="hero-actions">
-          <a href="#contact" className="hero-btn-primary group">
+          <button type="button" className="hero-btn-primary group" onClick={() => openModal("Hero CTA")}>
             Get Callback
             <ArrowRight size={18} className="hero-btn-icon" />
-          </a>
+          </button>
           <a href="#price" className="hero-btn-secondary">
             View Price List
           </a>

@@ -1,9 +1,13 @@
 import { useState } from "react";
 import { X, ZoomIn } from "lucide-react";
+import { useEnquiryModal } from "./EnquiryModalContext";
+import { useLockBodyScroll } from "../hooks/useLockBodyScroll";
 import "./PlanSection.css";
 
 export default function MasterPlanSection() {
+  const { openModal } = useEnquiryModal();
   const [open, setOpen] = useState(false);
+  useLockBodyScroll(open);
 
   return (
     <section id="master" className="plan-section plan-section-dark">
@@ -34,6 +38,15 @@ export default function MasterPlanSection() {
                 <ZoomIn size={18} />
               </div>
             </div>
+          </button>
+        </div>
+        <div style={{ marginTop: "1rem", textAlign: "center" }}>
+          <button
+            type="button"
+            className="enquiry-trigger-btn"
+            onClick={() => openModal("Master Plan Section CTA")}
+          >
+            Request Master Plan Callback
           </button>
         </div>
       </div>

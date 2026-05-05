@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
+import { useEnquiryModal } from "./EnquiryModalContext";
+import { useLockBodyScroll } from "../hooks/useLockBodyScroll";
 import "./Gallery.css";
 
 const galleryImages = [
@@ -21,8 +23,10 @@ const categories = [
 ];
 
 export default function Gallery() {
+  const { openModal } = useEnquiryModal();
   const [activeCategory, setActiveCategory] = useState("all");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  useLockBodyScroll(lightboxIndex !== null);
 
   const filtered =
     activeCategory === "all"
@@ -69,6 +73,15 @@ export default function Gallery() {
               {cat.label}
             </button>
           ))}
+        </div>
+        <div style={{ textAlign: "center", marginBottom: "1.4rem" }}>
+          <button
+            type="button"
+            className="enquiry-trigger-btn"
+            onClick={() => openModal("Gallery Section CTA")}
+          >
+            Book Site Visit
+          </button>
         </div>
 
         {/* Image Grid */}

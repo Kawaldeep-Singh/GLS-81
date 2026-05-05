@@ -1,7 +1,10 @@
 import { CheckCircle } from "lucide-react";
+import { useEnquiryModal } from "./EnquiryModalContext";
 import "./About.css";
 
 export default function About() {
+  const { openModal } = useEnquiryModal();
+
   const details = [
     ["License No.", "34 OF 2020"],
     ["HARERA No.", "10 of 2021"],
@@ -44,6 +47,13 @@ export default function About() {
               <p>
                 We have a few premium, ready-to-move 2BHK and 2BHK+Study apartments available for resale. These units range from 559 to 629 sq.ft. and are perfect for families looking to shift immediately without the hassle of construction delays.
               </p>
+              <button
+                type="button"
+                className="enquiry-trigger-btn"
+                onClick={() => openModal("About Section CTA")}
+              >
+                Request Callback
+              </button>
             </div>
           </div>
 

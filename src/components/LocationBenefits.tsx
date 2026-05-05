@@ -8,6 +8,8 @@ import {
   X,
   ZoomIn,
 } from "lucide-react";
+import { useEnquiryModal } from "./EnquiryModalContext";
+import { useLockBodyScroll } from "../hooks/useLockBodyScroll";
 import "./LocationBenefits.css";
 
 const locationGroups = [
@@ -89,7 +91,9 @@ function DistanceGrid({ items, colorClass }: { items: DistanceItem[]; colorClass
 }
 
 export default function LocationBenefits() {
+  const { openModal } = useEnquiryModal();
   const [open, setOpen] = useState(false);
+  useLockBodyScroll(open);
 
   return (
     <section id="location" className="location-section">
@@ -148,6 +152,15 @@ export default function LocationBenefits() {
             <DistanceGrid items={group.items} colorClass={group.colorClass} />
           </div>
         ))}
+        <div style={{ marginTop: "1.25rem", textAlign: "center" }}>
+          <button
+            type="button"
+            className="enquiry-trigger-btn"
+            onClick={() => openModal("Location Section CTA")}
+          >
+            Request Location Callback
+          </button>
+        </div>
       </div>
 
       {open && (

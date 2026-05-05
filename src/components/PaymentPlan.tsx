@@ -1,4 +1,5 @@
 import { CheckCircle2, Landmark, ShieldCheck, Banknote } from "lucide-react";
+import { useEnquiryModal } from "./EnquiryModalContext";
 import "./PaymentPlan.css";
 
 const benefits = [
@@ -8,6 +9,8 @@ const benefits = [
 ];
 
 export default function PaymentPlan() {
+  const { openModal } = useEnquiryModal();
+
   return (
     <section id="payment" className="payment-section">
       <div className="container">
@@ -39,12 +42,13 @@ export default function PaymentPlan() {
           <p className="payment-summary-note">Contact our experts today to calculate your EMI and check your loan eligibility.</p>
           
           <div style={{ marginTop: "1.5rem" }}>
-            <a 
-              href="#contact" 
+            <button
+              type="button"
+              onClick={() => openModal("Payment Plan CTA")}
               style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", backgroundColor: "var(--color-white)", color: "var(--color-orange-600)", padding: "0.75rem 1.5rem", borderRadius: "9999px", fontWeight: 700, fontSize: "0.875rem" }}
             >
                Get Free Consultation
-            </a>
+            </button>
           </div>
         </div>
       </div>

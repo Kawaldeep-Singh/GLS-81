@@ -9,6 +9,7 @@ import {
   IndianRupee,
   Hammer,
 } from "lucide-react";
+import { useEnquiryModal } from "./EnquiryModalContext";
 import "./KeyFeatures.css";
 
 const features = [
@@ -39,6 +40,8 @@ const usps = [
 ];
 
 export default function KeyFeatures() {
+  const { openModal } = useEnquiryModal();
+
   return (
     <section id="features" className="features-section">
       <div className="features-bg-decor" />
@@ -70,6 +73,15 @@ export default function KeyFeatures() {
               <p className="usp-text">{usp.text}</p>
             </div>
           ))}
+        </div>
+        <div style={{ marginTop: "1.1rem", textAlign: "center" }}>
+          <button
+            type="button"
+            className="enquiry-trigger-btn"
+            onClick={() => openModal("USP Section CTA")}
+          >
+            Request Full Details
+          </button>
         </div>
       </div>
     </section>

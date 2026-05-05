@@ -140,3 +140,23 @@ img {
   background: linear-gradient(180deg, var(--color-orange-500), var(--color-orange-700));
   border-radius: 4px;
 }
+
+.enquiry-trigger-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  background: linear-gradient(to right, var(--color-orange-500), var(--color-orange-600));
+  color: var(--color-white);
+  border-radius: 9999px;
+  padding: 0.65rem 1.15rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 10px 20px -10px rgba(249, 115, 22, 0.45);
+}
+
+.enquiry-trigger-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 22px -10px rgba(249, 115, 22, 0.55);
+}

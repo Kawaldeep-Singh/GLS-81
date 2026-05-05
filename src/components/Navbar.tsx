@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Phone, Menu, X } from "lucide-react";
+import { useEnquiryModal } from "./EnquiryModalContext";
 import "./Navbar.css";
 
 const navLinks = [
@@ -12,10 +13,12 @@ const navLinks = [
   { label: "Master", href: "#master" },
   { label: "Price", href: "#price" },
   { label: "Location", href: "#location" },
+  { label: "Contact", href: "#contact" },
 
 ];
 
 export default function Navbar() {
+  const { openModal } = useEnquiryModal();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -59,9 +62,9 @@ export default function Navbar() {
         </nav>
 
         {/* CTA Button */}
-        <a href="tel:+919053608395" className="navbar-cta">
+        <button type="button" className="navbar-cta" onClick={() => openModal("Navbar CTA")}>
           <Phone size={14} /> +91 9053608395
-        </a>
+        </button>
 
         {/* Mobile menu button */}
         <button
@@ -86,9 +89,9 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
-          <a href="tel:+919053608395" className="navbar-mobile-cta">
+          <button type="button" className="navbar-mobile-cta" onClick={() => { setMenuOpen(false); openModal("Navbar Mobile CTA"); }}>
             <Phone size={14} /> +91 9053608395
-          </a>
+          </button>
         </nav>
       </div>
     </header>
