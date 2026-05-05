@@ -1,0 +1,130 @@
+.payment-section {
+  padding: 5rem 1rem;
+  background-color: var(--color-white);
+  position: relative;
+}
+
+@media (min-width: 640px) {
+  .payment-section { padding: 6rem 1rem; }
+}
+
+.payment-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.payment-subtitle {
+  color: var(--color-orange-500);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.payment-title {
+  font-size: 1.875rem;
+  color: var(--color-gray-900);
+  margin-top: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .payment-title { font-size: 2.25rem; }
+}
+
+@media (min-width: 1024px) {
+  .payment-title { font-size: 3rem; }
+}
+
+.loan-benefits-grid {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .loan-benefits-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.loan-benefit-card {
+  background-color: var(--color-gray-50);
+  border: 1px solid var(--color-gray-200);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.loan-benefit-card:hover {
+  background-color: var(--color-white);
+  box-shadow: 0 20px 25px -5px rgba(229, 231, 235, 0.5);
+  border-color: var(--color-orange-200);
+  transform: translateY(-0.25rem);
+}
+
+.loan-icon-wrapper {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: linear-gradient(to bottom right, var(--color-orange-100), var(--color-orange-50));
+  color: var(--color-orange-600);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem auto;
+  transition: all 0.3s ease;
+}
+
+.loan-benefit-card:hover .loan-icon-wrapper {
+  background: linear-gradient(to bottom right, var(--color-orange-500), var(--color-orange-600));
+  color: var(--color-white);
+  transform: scale(1.1);
+}
+
+.loan-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-gray-900);
+  margin-bottom: 0.5rem;
+}
+
+.loan-desc {
+  font-size: 0.875rem;
+  color: var(--color-gray-600);
+  line-height: 1.5;
+}
+
+.payment-summary {
+  max-width: 48rem;
+  margin: 3rem auto 0 auto;
+  background: linear-gradient(to right, var(--color-gray-900), var(--color-gray-800));
+  border-radius: 1rem;
+  padding: 2.5rem;
+  text-align: center;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.payment-summary-label {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.payment-summary-value {
+  color: var(--color-white);
+  font-size: 1.875rem;
+  font-weight: 700;
+}
+
+.payment-summary-note {
+  color: var(--color-orange-300);
+  font-size: 1rem;
+  margin-top: 0.75rem;
+  max-width: 32rem;
+  margin-left: auto;
+  margin-right: auto;
+}
