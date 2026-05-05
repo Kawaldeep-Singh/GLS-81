@@ -36,7 +36,7 @@ export default function Hero() {
 
         {/* Subtitle */}
         <h2 className="hero-subtitle">
-          Premium 2BHK & 3BHK Homes in Sector 81, Gurgaon
+          Premium 2BHK & 2BHK+Study Homes in Sector 81, Gurgaon
         </h2>
 
         <p className="hero-desc">
